@@ -13,8 +13,9 @@ def current_series():
             "error" : "Invalid json response received from cricbuzz servers. Cricbuzz might have changed their internal API."
         })
     except req.RequestException:
-        
-
+        return jsonify({
+            "error" : "Unable to get a response from cricbuzz servers. Cricbuzz might have changed their internal API."
+        })
     uniques = set()
     series = []
     for match in matches:
@@ -25,5 +26,5 @@ def current_series():
 
     return jsonify(series)
 
-@app.route('/match/current', methods=['GET'])
-def current_match():
+#@app.route('/match/current', methods=['GET'])
+#def current_match():
