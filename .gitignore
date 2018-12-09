@@ -1,0 +1,5 @@
+*.pyc
+
+# virutal environments
+venv2/*
+venv3/*
